@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+      This is an HTML comment
+      You can write text in a comment and the content won't be visible in the page
+    -->
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+
+    <title>Hello Student</title>
+    <!-- The website stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+
+    <!-- The website JavaScript file -->
+    <script src="/hackathon.js" defer></script>
+  </head>
+  <body>
+    <h1>Rikkei Academy</h1>
+    <!--  form  -->
+    <form onsubmit="save(event)">
+      <h2>Thong tin sinh vien</h2>
+      <!--  label là thẻ inline, hay dùng cho form, nếu for trong label = id trong input thì khi click vào label sẽ nhảy xuống input   -->
+      <label for="name">Ho va Ten</label>
+      <input id="name" type="text" placeholder="Vui long nhap ten" /><br />
+      <label for="email">Email</label>
+      <input id="email" placeholder="Vui long nhap email" /><br />
+      <label for="phone">So dien thoai</label>
+      <input id="phone" placeholder="Vui long nhap so dien thoai" /><br />
+      <label for="address">Que quan</label>
+      <input id="address" placeholder="Vui long nhap dia chi" /><br />
+      <label>Gioi tinh</label>
+      <!--      checked: sẽ tự động tick radio  -->
+      <!--    tick 1 trong 2 -> 2 radio đặt cùng name     -->
+      <!--        -->
+      <input
+        type="radio"
+        name="gender"
+        value="nam"
+        checked
+        onchange="change()"
+      />
+      Nam
+      <input
+        type="radio"
+        name="gender"
+        value="nu"
+        onchange="change()"
+      />Nu<br />
+      <button>Luu lai</button>
+    </form>
+    <!--    -->
+    <section id="listStudent">
+      <h2>Danh sach hoc vien</h2>
+      <!--     Form   -->
+      <form>
+        <label for="nameFind">Tim kiem ten hoc vien</label>
+        <input id="nameFind" />
+        <button>Search</button>
+      </form>
+      <!--   Table   -->
+      <table border="1">
+        <tr>
+          <td>#</td>
+          <td>Ho ten</td>
+          <td>Email</td>
+          <td>Dien thoai</td>
+          <td>Dia chi</td>
+          <td>Gender</td>
+          <td>Hanh dong</td>
+          <td><button onclick="sortData()">Sắp xếp (alpha b)</button></td>
+        </tr>
+        <!-- thêm tbody  class="table"       -->
+        <tbody class="table"></tbody>
+      </table>
+    </section>
+  </body>
+</html>

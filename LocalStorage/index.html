@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <!--  - 0 +    -->
+
+    <!--     <div class="counter">
+      <button onclick="sub()">-</button>
+      <p class="num">0</p>
+      <button onclick="add()">+</button>
+    </div>
+ -->
+    <!--  Form gồm: label, input username, password    -->
+    <form onsubmit="save(event)">
+      <label for="username">Username</label>
+      <input class="username" /><br />
+      <label for="password">Password</label>
+      <input class="password" />
+      <br />
+      <button>Submit form</button>
+    </form>
+
+    <button onclick="sort()">Sort (Username A -> Z)</button>
+
+    <table border="1">
+      <tr>
+        <td>id</td>
+        <td>username</td>
+        <td>password</td>
+        <td>Action</td>
+      </tr>
+      <tbody class="table"></tbody>
+    </table>
+
+    <script src="localStorage.js"></script>
+  </body>
+</html>
