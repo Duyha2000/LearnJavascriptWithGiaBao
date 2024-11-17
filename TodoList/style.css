@@ -1,0 +1,52 @@
+.container {
+  width: 900px;
+  box-shadow: gray 1px 1px 20px;
+  margin-top: 100px;
+  margin-left: 300px;
+}
+form {
+  border-radius: 10px;
+}
+form h1 {
+  text-align: center;
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+form input {
+  margin-left: 50px;
+  margin-top: 20px;
+  width: 700px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid gray;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+form .add-todo {
+  background-color: rgb(48, 117, 255);
+  color: white;
+  width: 70px;
+  height: 30px;
+  border-radius: 5px;
+}
+form button:hover {
+  background-color: rgb(5, 72, 207);
+}
+form p {
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+table input {
+  margin-left: 50px;
+}
+table h1 {
+  width: 650px;
+  margin-left: 20px;
+}
+svg {
+  width: 20px;
+  height: 20px;
+}
