@@ -9,6 +9,9 @@
   </head>
   <body>
     <!-- http://localhost:5500/TodoList/index.html -->
+    <!-- <input type="checkbox" id="checkboxTest" onclick="handleCheckbox()" />
+    <label>Rửa bát</label> -->
+    <!-- <button onclick="handleClick()">Click me</button> -->
     <div class="container">
       <form onsubmit="add(event)">
         <h1>Danh sách công việc</h1>
@@ -63,7 +66,20 @@
         </tr> -->
       </table>
     </div>
+    <div>
+      <!-- 1/2 ->  -->
+      <h1>Cong viec da hoan thanh: <span id="todosLength"></span></h1>
+    </div>
 
+    <form onsubmit="updateEdit(event)" class="formEdit">
+      <h1>Cap nhat cong viec</h1>
+      <h2>Ten cong viec</h2>
+      <input type="text" class="inputEdit" />
+      <button onclick="cancelEdit()">Huy</button>
+      <button>Dong y</button>
+    </form>
+    <!-- Status là true thì checkbox sẽ được tick, còn ngược lại thì không -->
+    <!-- Hiển thị số công việc đã hoàn thành 1/2 -->
     <script src="app.js"></script>
   </body>
 </html>

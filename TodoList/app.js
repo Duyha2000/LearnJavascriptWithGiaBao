@@ -19,10 +19,10 @@ function displayData() {
     for (let i = 0; i < todos.length; i++) {
       html += `
     <tr>
-        <td><input type="checkbox"></td>
+        <td><input class="checkbox" type="checkbox" onclick="checkRow(${i})"></td>
         <td><h1>${todos[i].name}</h1></td>
         <td>
-            <button>
+            <button onclick="editRow(${i})">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -89,3 +89,53 @@ function deleteRow(index) {
 }
 // display để hiển thị ra
 displayData();
+
+let todosLength = document.getElementById("todosLength");
+
+console.log(todos.length);
+// Các cách hiển thị ra giao diện: innertext, textContent:
+todosLength.textContent = todos.length;
+
+// let checkboxTest = document.getElementById("checkboxTest");
+
+// // null -> false
+// let status = localStorage.getItem("status") || false;
+
+// // students lưu trong local
+// // dùng for: bị lỗi
+// // localStorage.getItem("students") || [];
+// // true/false: boolean
+
+// checkboxTest.checked = JSON.parse(status);
+
+// function handleCheckbox() {
+//   localStorage.setItem("status", checkboxTest.checked);
+//   console.log(Boolean(status), "status");
+// }
+let isCheck = false;
+// function handleClick() {
+//   isCheck = !isCheck;
+// }
+let formEdit = document.querySelector(".formEdit");
+formEdit.style.display = "none";
+
+let inputEdit = document.querySelector(".inputEdit");
+function cancelEdit() {
+  formEdit.style.display = "none";
+}
+
+function editRow(index) {
+  formEdit.style.display = "block";
+  inputEdit.value = todos[index].name;
+  localStorage.setItem("index", index);
+}
+
+function updateEdit(event) {
+  event.preventDefault();
+  let i = localStorage.getItem("index");
+  todos[i].name = inputEdit.value;
+  localStorage.setItem("todos", JSON.stringify(todos));
+  displayData();
+  formEdit.style.display = "none";
+  event.target.reset();
+}
